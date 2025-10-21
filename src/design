@@ -1,0 +1,3 @@
+Model - Internal model of
+View - Presents model to User
+Controller - User interface med programmmet skickar kommandon till model och view
