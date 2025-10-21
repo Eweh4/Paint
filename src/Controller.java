@@ -12,7 +12,15 @@ public class Controller extends JFrame implements MouseListener, MouseMotionList
     public Controller(Model m, View v){
         this.m = m;
         this.v = v;
-        v.addMouseListener(this);
+
+        setTitle("View");
+        setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        setBackground(Color.GREEN);
+        setSize(800,400);
+        setLocation(50,50);
+        setVisible(true);
+
+        addMouseListener(this);
         JPanel topPanel = new JPanel(new FlowLayout());
         JPanel bottomPanel = new JPanel(new BorderLayout());
 
@@ -55,9 +63,10 @@ public class Controller extends JFrame implements MouseListener, MouseMotionList
 
         mode = new JLabel("Mode: " + m.getShape() + ", Color: " + m.getColor());
         mode.setFont(new Font("Default", Font.BOLD, 16));
+
         bottomPanel.add(mode, BorderLayout.SOUTH);
-        v.add(topPanel, BorderLayout.NORTH);
-        v.add(bottomPanel,BorderLayout.SOUTH);
+        add(topPanel, BorderLayout.NORTH);
+        add(bottomPanel,BorderLayout.SOUTH);
     }
 
     @Override
