@@ -1,3 +1,14 @@
-Model - Internal model of
-View - Presents model to User
-Controller - User interface med programmmet skickar kommandon till model och view
+DrawControl - Ritar upp fönstret och tar hand om kommandon från user inputs
+Model - Lagrar datan av canvasen, sköter beräkningar och tar hand om undo/save/load
+View - Sköter grafik genom att rita figurer på canvasen
+Shape - Innehåller information för att rita Objekt som färg, form och position på canvas
+
+Relationer:
+    DrawControl:    Skickar kommandon till Model att lägga till objekt och ändra färg och form
+                    Säger till View att uppdatera bilden för användaren
+
+    View:           Ombeddes av DrawControl att uppdatera bilden för användaren
+                    Får information från model om vad som ska ritas ut
+
+    Model:          Får information från DrawControl om användarens input
+                    Ger information till View om vilka object som ska ritas ut
